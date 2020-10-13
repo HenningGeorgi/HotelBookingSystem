@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class CreateBookingRequest {
     private Guest guest;
+
     public Guest getGuest() {
         return guest;
     }

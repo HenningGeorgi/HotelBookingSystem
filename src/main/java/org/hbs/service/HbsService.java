@@ -1,11 +1,10 @@
 package org.hbs.service;
 
-import org.hbs.model.Booking;
+import org.hbs.domain.Booking;
 import org.hbs.model.Bookings;
 import org.hbs.model.CreateBookingResponse;
 import org.hbs.model.CreateBookingUpdateResponse;
 import org.hbs.model.Guest;
-import org.hbs.model.Room;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;

@@ -1,4 +1,6 @@
-package org.hbs.model;
+package org.hbs.domain;
+
+import org.hbs.model.Guest;
 
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;

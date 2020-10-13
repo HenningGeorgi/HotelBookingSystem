@@ -36,13 +36,20 @@ public class BookingController {
 
     @PostMapping("/booking")
     public CreateBookingResponse createBooking(@RequestBody CreateBookingRequest request) {
-        return service.createBooking(request.getGuest(), request.getRoom());
+        return service.createBooking(request.getGuest());
+    }
+
+    @DeleteMapping("/bookings")
+    public void deleteAll() {
+        service.deleteAll();
     }
 
     @DeleteMapping("/booking/{id}")
-    public void deleteBooking(UUID id) { service.delete(); }
+    public void deleteBooking(@PathVariable UUID id) { service.deleteBooking(id); }
 
     @PutMapping("/booking/{id}")
-    public CreateBookingUpdateResponse putBooking(@PathVariable UUID id, @RequestBody CreateBookingUpdateRequest request)
+    public CreateBookingUpdateResponse putBooking(@PathVariable UUID id, @RequestBody CreateBookingUpdateRequest request) {
+        return service.putBooking(id, request.getGuest());
+    }
 
 }

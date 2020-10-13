@@ -1,5 +1,7 @@
 package org.hbs.model;
 
+import org.hbs.domain.Booking;
+
 import java.util.ArrayList;
 import java.util.List;
 

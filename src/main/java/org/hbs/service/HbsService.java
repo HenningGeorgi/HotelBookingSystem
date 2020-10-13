@@ -3,6 +3,7 @@ package org.hbs.service;
 import org.hbs.model.Booking;
 import org.hbs.model.Bookings;
 import org.hbs.model.CreateBookingResponse;
+import org.hbs.model.CreateBookingUpdateResponse;
 import org.hbs.model.Guest;
 import org.hbs.model.Room;
 import org.springframework.stereotype.Service;
@@ -19,11 +20,21 @@ public class HbsService {
         return null;
     }
 
-    public CreateBookingResponse createBooking(Guest guest, Room room) {
-        return null;
+    public CreateBookingResponse createBooking(Guest guest) {
+        Booking booking = new Booking(UUID.randomUUID(), guest);
+        return new CreateBookingResponse(booking.getId(), booking.getGuest());
     }
 
-    public void delete() {
+    public void deleteAll() {
+    }
 
+    public void deleteBooking(UUID id) {
+    }
+
+    public CreateBookingUpdateResponse putBooking(UUID id, Guest newGuest) {
+        Booking booking = getBooking(id);
+
+        booking.setGuest(newGuest);
+        return new CreateBookingUpdateResponse(id, newGuest);
     }
 }

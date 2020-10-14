@@ -3,24 +3,14 @@ package org.hbs.model;
 import java.util.UUID;
 
 public class Guest {
-    private UUID id;
     private String firstname;
     private String lastname;
     private String adress;
 
-    public Guest(UUID id, String firstname, String lastname, String adress) {
-        this.id=id;
+    public Guest(String firstname, String lastname, String adress) {
         this.firstname=firstname;
         this.lastname=lastname;
         this.adress=adress;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
     }
 
     public String getFirstname() {

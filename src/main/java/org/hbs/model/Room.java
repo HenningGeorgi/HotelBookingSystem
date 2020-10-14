@@ -1,6 +1,5 @@
 package org.hbs.model;
 
-import java.util.UUID;
 
 public class Room{
     private Integer floor, roomNumber;

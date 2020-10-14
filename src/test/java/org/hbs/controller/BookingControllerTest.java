@@ -36,12 +36,47 @@ public class BookingControllerTest {
 
     @Test
     public void getBookings() throws Exception {
+        mockMvc.perform(
+                post("/booking")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"guest\":\"Henning\"}"))
+                .andExpect(status().isCreated())
+                .andExpect(content().json("{\n" +
+                        "    \"guest\": \"Henning\",\n" +
+                        "}"));
 
-    }
+        mockMvc.perform(
+                post("/booking")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"guest\":\"Oliver\"}"))
+                .andExpect(status().isCreated())
+                .andExpect(content().json("{\n" +
+                        "    \"guest\": \"Oliver\",\n" +
+                        "}"));
 
-    @Test
-    public void getBookingsInvalid() throws Exception {
+        mockMvc.perform(
+                get("/bookings"))
+                .andExpect(content().json("{\n" +
+                        "    \"bookings\": [\n" +
+                        "    {\n"  +
+                        "    \"guest\":\"Henning\",\n" +
+                        "    },\n" +
+                        "    {\n"  +
+                        "    \"guest\":\"Oliver\",\n" +
+                        "    }\n"  +
+                        "}"));
 
+
+        /*{
+            "greetings": [
+            {
+                "id": "a49db142-f71b-4552-8df1-f101e6a35985",
+                    "name": "Henning2",
+                    "age": 18,
+                    "vegan": false
+            }
+    ]
+        }*/
     }
 
     @Test

@@ -4,9 +4,9 @@ import java.util.UUID;
 
 public class CreateBookingResponse {
     private final UUID id;
-    private Guest guest;
+    private String guest;
 
-    public CreateBookingResponse(UUID id, Guest guest) {
+    public CreateBookingResponse(UUID id, String guest) {
         this.id=id;
         this.guest=guest;
     }

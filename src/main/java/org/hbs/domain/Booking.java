@@ -8,20 +8,20 @@ import java.util.UUID;
 
 public class Booking {
     private UUID id;
-    private Guest guest;
+    private String guest;
 
     public Booking() {}
 
-    public Booking(UUID id, Guest guest) {
+    public Booking(UUID id, String guest) {
         this.id=id;
         this.guest=guest;
     }
 
-    public Guest getGuest() {
+    public String getGuest() {
         return guest;
     }
 
-    public void setGuest(Guest guest) {
+    public void setGuest(String guest) {
         this.guest = guest;
     }
 

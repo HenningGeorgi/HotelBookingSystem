@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class CreateBookingUpdateResponse {
 
-    public CreateBookingUpdateResponse(UUID id, Guest guest) {
+    public CreateBookingUpdateResponse(UUID id, String guest) {
 
     }
 }

@@ -10,4 +10,12 @@ public class CreateBookingResponse {
         this.id=id;
         this.guest=guest;
     }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public String getGuest() {
+        return guest;
+    }
 }
